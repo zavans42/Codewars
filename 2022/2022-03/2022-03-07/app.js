@@ -14,7 +14,6 @@ function find(array, element) {
   }
   return "Not found";
 }
-
 */
 
 // ANSWER
