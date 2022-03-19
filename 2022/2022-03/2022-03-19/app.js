@@ -1,68 +1,39 @@
 /* CHALLENGE
 
-The function is not returning the correct values. Can you figure out why?
+Think of a way to store the languages as a database (eg an object). The languages are listed below so you can copy and paste!
+Write a 'welcome' function that takes a parameter 'language' (always a string), and returns a greeting - if you have it in your database. 
+It should default to English if the language is not in the database, or in the event of an invalid input.
 
 */
 
 
-/* STARTING CODE
+/* EXAMPLE
 
-function getPlanetName(id){
-  var name;
-  switch(id){
-    case 1:
-      name = 'Mercury'
-    case 2:
-      name = 'Venus'
-    case 3:
-      name = 'Earth'
-    case 4:
-      name = 'Mars'
-    case 5:
-      name = 'Jupiter'
-    case 6:
-      name = 'Saturn'
-    case 7:
-      name = 'Uranus'
-    case 8:
-      name = 'Neptune'
-  }
-  
-  return name;
-}
+greet('english') // 'Welcome
+greet('dutch') // 'Welkom
+greet('IP_ADDRESS_INVALID') // 'Welcome
 
 */
 
 // ANSWER
 
-function getPlanetName(id) {
-    var name;
-    switch (id) {
-        case 1:
-            name = 'Mercury'
-            break;
-        case 2:
-            name = 'Venus'
-            break;
-        case 3:
-            name = 'Earth'
-            break;
-        case 4:
-            name = 'Mars'
-            break;
-        case 5:
-            name = 'Jupiter'
-            break;
-        case 6:
-            name = 'Saturn'
-            break;
-        case 7:
-            name = 'Uranus'
-            break;
-        case 8:
-            name = 'Neptune'
-            break;
-    }
-
-    return name;
+const greet = lang => {
+    return lang === 'english' ? 'Welcome' :
+        lang === 'czech' ? 'Vitejte' :
+        lang === 'danish' ? 'Velkomst' :
+        lang === 'dutch' ? 'Welkom' :
+        lang === 'estonian' ? 'Tere tulemast' :
+        lang === 'finnish' ? 'Tervetuloa' :
+        lang === 'flemish' ? 'Welgekomen' :
+        lang === 'french' ? 'Bienvenue' :
+        lang === 'german' ? 'Willkommen' :
+        lang === 'irish' ? 'Failte' :
+        lang === 'italian' ? 'Benvenuto' :
+        lang === 'latvian' ? 'Gaidits' :
+        lang === 'lithuanian' ? 'Laukiamas' :
+        lang === 'polish' ? 'Witamy' :
+        lang === 'spanish' ? 'Bienvenido' :
+        lang === 'swedish' ? 'Valkommen' :
+        lang === 'welsh' ? 'Croeso' :
+        'Welcome'
 }
