@@ -1,20 +1,53 @@
 /* CHALLENGE
 
-Given 2 strings, a and b, return a string of the form short+long+short, with the shorter string 
-on the outside and the longer string on the inside. The strings will not be the same length, but they may be empty ( zero length ).
+Make multiple functions that will return the sum, difference, modulus, product, quotient, and the exponent respectively.
+
+Please use the following function names:
+
+addition = add
+multiply = multiply
+division = divide (both integer and float divisions are accepted)
+modulus = mod
+exponential = exponent
+subtraction = subt
+
+Note: All math operations will be: a (operation) b2
 
 */
 
 /* EXAMPLE
 
-("1", "22") --> "1221"
-("22", "1") --> "1221"
+add(1,2) // 3
+multiply(1,2) // 2
+divide(2,1) // 2
+mod(1,2) // 1
+exponent(1,2) // 1
+subt(1,2) // -1
 
 */
 
 // ANSWER
 
-function solution(a, b) {
-    // your code here
-    return a.length > b.length ? b + a + b : a + b + a;
+function add(a, b) {
+    return a + b
+}
+
+function divide(a, b) {
+    return a / b
+}
+
+function multiply(a, b) {
+    return a * b
+}
+
+function mod(a, b) {
+    return a % b
+}
+
+function exponent(a, b) {
+    return a ** b
+}
+
+function subt(a, b) {
+    return a - b
 }
