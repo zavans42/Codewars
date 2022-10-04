@@ -19,19 +19,26 @@ rgb(148, 0, 211) // returns 9400D3
 
 */
 
-function dirReduc(arr) {
-    let str = arr.join(" ");
-    let re = /north south|south north|east west|west east/i;
-  
-    while (re.test(str)) {
-      str = str
-        // remove direct opposites
-        .replace(re, "")
-        // remove double whitespaces & whitespace in the beginning or the end of the word
-        .replace(/^\s|\s(?=\s)|\s$/, "");
-    }
-  
-    // check if string is empty
-    return /\w/.test(str) ? str.split(" ") : [];
-  }
-  
+function rgb(r, g, b) {
+  let rgb = [r, g, b];
+  const hex = "0123456789ABCDEF";
+
+  return rgb
+    .map((color) => {
+      // any values that fall out of that range must be rounded to the closest valid value.
+      if (color < 0) {
+        color = 0;
+      }
+      if (color > 255) {
+        color = 255;
+      }
+
+      // divide the number by 16
+      let firstVal = hex[Math.floor(color / 16)];
+      // take the remainder of the first value and multiply by 16
+      let secondVal = hex[Math.floor(color % 16)];
+
+      return `${firstVal}${secondVal}`;
+    })
+    .join("");
+}
